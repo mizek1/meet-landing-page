@@ -34,6 +34,10 @@ body {
 header {
   text-align: center;
   margin: 4.8rem 0 5.4rem 0;
+
+  @media (min-width: @tablet) {
+    margin: 4.8rem 0 6.4rem 0;
+  }
 }
 
 .main {
@@ -54,6 +58,7 @@ header {
     row-gap: 4.8rem;
     overflow: hidden;
     justify-content: center;
+    justify-items: stretch;
 
     img {
       width: 100%;
@@ -65,6 +70,11 @@ header {
       &:last-child {
         grid-area: picture-2;
       }
+    }
+
+    @media (min-width: @tablet) {
+      column-gap: 3.2rem;
+      row-gap: 7.2rem;
     }
   }
 
@@ -86,6 +96,16 @@ header {
       line-height: 162%;
       color: @neutral-2;
       margin-bottom: 32px;
+    }
+
+    @media (min-width: @tablet) {
+      padding: 0 15.6rem;
+
+      h1 {
+        font-size: 4.8rem;
+        line-height: 100%;
+        padding: 0 6rem;
+      }
     }
   }
 
@@ -109,6 +129,11 @@ header {
       padding: 1.6rem 2.9rem;
       background: @secondary;
       border-radius: 2.9rem;
+    }
+
+    @media (min-width: @tablet) {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 
@@ -144,6 +169,22 @@ header {
         font-weight: 500;
         color: @neutral-2;
         margin-bottom: 6.4rem;
+      }
+
+      @media (min-width: @tablet) {
+        margin-top: 8rem;
+        padding: 0 4rem;
+
+        h3 {
+          padding: 0 12.2rem;
+          font-size: 4rem;
+          line-height: 110%;
+        }
+
+        p {
+          padding: 0 5.8rem;
+          margin-bottom: 8rem;
+        }
       }
     }
 
@@ -196,6 +237,32 @@ header {
           color: @secondary-light;
         }
       }
+
+      @media (min-width: @tablet) {
+        section {
+          background: linear-gradient(
+              rgba(77, 150, 169, 0.91),
+              rgba(77, 150, 169, 0.91)
+            ),
+            url('./assets/tablet/image-footer.jpg');
+        }
+
+        h2 {
+          padding: 0 15.6rem;
+          font-size: 4rem;
+          line-height: 110%;
+        }
+
+        p {
+          margin-top: 3.2rem;
+          padding: 0 9.8rem;
+        }
+
+        button {
+          margin-top: 4rem;
+          margin-bottom: 6.6rem;
+        }
+      }
     }
 
     &-grid-img {
@@ -207,6 +274,11 @@ header {
       img {
         width: 100%;
         border-radius: 0.8rem;
+      }
+
+      @media (min-width: @tablet) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.1rem;
       }
     }
   }
