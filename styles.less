@@ -38,6 +38,10 @@ header {
   @media (min-width: @tablet) {
     margin: 4.8rem 0 6.4rem 0;
   }
+
+  @media (min-width: @desktop) {
+    margin: 8rem 0 6.1rem 0;
+  }
 }
 
 .main {
@@ -48,6 +52,7 @@ header {
     color: white;
     border: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
 
   &__header {
@@ -76,26 +81,45 @@ header {
       column-gap: 3.2rem;
       row-gap: 7.2rem;
     }
+
+    @media (min-width: @desktop) {
+      grid-template-columns: minmax(39.4rem, 1fr) 54rem minmax(39.4rem, 1fr);
+      grid-template-areas: 'picture-1 info picture-2';
+      column-gap: 8.8rem;
+
+      img {
+        &:first-of-type {
+          align-self: start;
+          justify-self: end;
+        }
+
+        &:last-of-type {
+          align-self: end;
+          justify-self: start;
+        }
+      }
+    }
   }
 
   &__title {
     grid-area: info;
     text-align: center;
     padding: 0 2.4rem;
+    align-self: center;
 
     h1 {
       font-size: 4rem;
       line-height: 110%;
       font-weight: 900;
       color: @neutral-1;
-      margin-bottom: 24px;
+      margin-bottom: 2.4rem;
     }
 
     p {
       font-size: 1.6rem;
       line-height: 162%;
       color: @neutral-2;
-      margin-bottom: 32px;
+      margin-bottom: 3.2rem;
     }
 
     @media (min-width: @tablet) {
@@ -105,6 +129,24 @@ header {
         font-size: 4.8rem;
         line-height: 100%;
         padding: 0 6rem;
+        margin-bottom: 3.4rem;
+        margin-top: 4.7rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 144%;
+      }
+    }
+
+    @media (min-width: @desktop) {
+      padding: 0;
+
+      h1 {
+        font-size: 6.4rem;
+        line-height: 100%;
+        padding: 0 4.3rem;
+        margin-bottom: 7.2rem;
       }
     }
   }
@@ -123,12 +165,20 @@ header {
       span {
         color: @primary-light;
       }
+
+      &:hover {
+        background: #71c0d4;
+      }
     }
 
     button:last-child {
       padding: 1.6rem 2.9rem;
       background: @secondary;
       border-radius: 2.9rem;
+
+      &:hover {
+        background: #b18bdd;
+      }
     }
 
     @media (min-width: @tablet) {
@@ -186,12 +236,31 @@ header {
           margin-bottom: 8rem;
         }
       }
+
+      @media (min-width: @desktop) {
+        margin-top: 11rem;
+        padding: 0 16.5rem;
+
+        h2 {
+          margin-bottom: 2.4rem;
+        }
+
+        h3 {
+          padding: 0 33.2rem;
+        }
+
+        p {
+          font-size: 1.8rem;
+          line-height: 144%;
+          padding: 0 28.5rem;
+        }
+      }
     }
 
     article:last-child {
       padding-top: 11.2rem;
 
-      section > div {
+      section > div:first-of-type {
         .section-indicator();
         position: relative;
         transform: translateY(-11.2rem);
@@ -203,7 +272,7 @@ header {
             rgba(77, 150, 169, 0.91)
           ),
           url('./assets/mobile/image-footer.jpg');
-        background-size: cover;
+        background-size: cover !important;
         text-align: center;
       }
 
@@ -236,6 +305,10 @@ header {
         span {
           color: @secondary-light;
         }
+
+        &:hover {
+          background: #b18bdd;
+        }
       }
 
       @media (min-width: @tablet) {
@@ -261,6 +334,45 @@ header {
         button {
           margin-top: 4rem;
           margin-bottom: 6.6rem;
+        }
+      }
+
+      @media (min-width: @desktop) {
+        section > div:last-child {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 16.5rem 10.4rem 16.5rem;
+
+          h2,
+          p,
+          button {
+            margin: 0;
+          }
+
+          h2 {
+            padding: 0;
+            text-align: left;
+            max-width: 35rem;
+          }
+
+          p {
+            padding: 0;
+            text-align: left;
+            max-width: 35rem;
+          }
+
+          button {
+            width: 19.3rem;
+          }
+        }
+
+        section {
+          background: linear-gradient(
+              rgba(77, 150, 169, 0.91),
+              rgba(77, 150, 169, 0.91)
+            ),
+            url('./assets/desktop/image-footer.jpg');
         }
       }
     }
