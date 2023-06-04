@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;900&display=swap');
+
+@primary: #4d96a9;
+@primary-light: #8fe3f9;
+@secondary: #855fb1;
+@secondary-light: #d9b8ff;
+@neutral-1: #28283d;
+@neutral-2: #87879d;
+@neutral-3: #fafafa;
+
+@tablet: 768px;
+@desktop: 1440px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background-color: @neutral-3;
+}
+
+header {
+  text-align: center;
+  margin: 4.8rem 0 5.4rem 0;
+}
+
+.main {
+  button {
+    appearance: none;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 'picture-1 picture-2' 'info info';
+    column-gap: 1.6rem;
+    row-gap: 4.8rem;
+    overflow: hidden;
+    justify-content: center;
+
+    img {
+      width: 100%;
+
+      &:first-child {
+        grid-area: picture-1;
+      }
+
+      &:last-child {
+        grid-area: picture-2;
+      }
+    }
+  }
+
+  &__title {
+    grid-area: info;
+    text-align: center;
+    padding: 0 2.4rem;
+
+    h1 {
+      font-size: 4rem;
+      line-height: 110%;
+      font-weight: 900;
+      color: @neutral-1;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 162%;
+      color: @neutral-2;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    button:first-child {
+      padding: 1.6rem 4rem;
+      background: @primary;
+      border-radius: 2.9rem;
+
+      span {
+        color: @primary-light;
+      }
+    }
+
+    button:last-child {
+      padding: 1.6rem 2.9rem;
+      background: @secondary;
+      border-radius: 2.9rem;
+    }
+  }
+
+  &__about {
+    article:first-child {
+      & > div {
+        .section-indicator();
+      }
+
+      padding: 0 2.4rem;
+      margin-top: 6.4rem;
+      text-align: center;
+      font-weight: 900;
+
+      h2 {
+        font-size: 1.6rem;
+        line-height: 162%;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        color: @primary;
+        margin-bottom: 2.4rem;
+      }
+
+      h3 {
+        font-size: 3.2rem;
+        line-height: 112%;
+        margin-bottom: 3.2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        line-height: 162%;
+        font-weight: 500;
+        color: @neutral-2;
+        margin-bottom: 6.4rem;
+      }
+    }
+
+    article:last-child {
+      padding-top: 11.2rem;
+
+      section > div {
+        .section-indicator();
+        position: relative;
+        transform: translateY(-11.2rem);
+      }
+
+      section {
+        background: linear-gradient(
+            rgba(77, 150, 169, 0.91),
+            rgba(77, 150, 169, 0.91)
+          ),
+          url('./assets/mobile/image-footer.jpg');
+        background-size: cover;
+        text-align: center;
+      }
+
+      h2,
+      p {
+        padding: 0 2.4rem;
+        color: @neutral-3;
+      }
+
+      h2 {
+        font-size: 3.2rem;
+        font-weight: 900;
+        line-height: 112%;
+        margin-top: -4.8rem;
+      }
+
+      p {
+        margin-top: 2.4rem;
+        font-size: 1.8rem;
+        line-height: 144%;
+      }
+
+      button {
+        margin-top: 3.2rem;
+        padding: 1.6rem 4rem;
+        background: @secondary;
+        border-radius: 2.9rem;
+        margin-bottom: 7.2rem;
+
+        span {
+          color: @secondary-light;
+        }
+      }
+    }
+
+    &-grid-img {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2.4rem;
+      padding: 6.4rem 0;
+
+      img {
+        width: 100%;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}
+
+.section-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.6rem;
+    height: 5.6rem;
+    font-size: 1.6rem;
+    line-height: 162%;
+    font-weight: 900;
+    color: @neutral-2;
+    border: 1px solid rgba(135, 135, 157, 0.25);
+    border-radius: 29px;
+    background-color: @neutral-3;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 8.4rem;
+    opacity: 0.25;
+    width: 1px;
+    background-color: @neutral-2;
+  }
+}
